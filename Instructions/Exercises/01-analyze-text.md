@@ -6,47 +6,47 @@ lab:
 
 # Analisar o texto
 
-A **Linguagem do Azure** dá suporte para análise de texto, incuindo detecção de idioma, análise de sentimento, extração de frases-chave e reconhecimento de entidades.
+A **Linguagem do Azure** permite análise de texto, incluindo detecção de idioma, análise de sentimento, extração de frases-chave e reconhecimento de entidade.
 
-Por exemplo, suponha que uma agência de viagens queira processar avaliações de hotéis que foram enviadas ao site da empresa. Usando a Linguagem de IA do Azure, eles podem determinar o idioma em que cada revisão está escrita, o sentimento (positivo, neutro ou negativo) das avaliações, frases-chave que podem indicar os principais tópicos discutidos na revisão e entidades nomeadas, como lugares, pontos de referência ou pessoas mencionadas nas avaliações.
+Por exemplo, suponha que uma agência de viagens queira processar avaliações de hotéis que foram enviadas ao site da empresa. Usando a Linguagem de IA do Azure, eles podem determinar o idioma em que cada avaliação está escrita, o sentimento (positivo, neutro ou negativo) das avaliações, frases-chave que podem indicar os principais tópicos discutidos na avaliação e entidades nomeadas, como lugares, pontos de referência ou pessoas mencionadas.
 
-## Provisionar um recurso da *Linguagem de IA do Azure*
+## Provisionar um recurso de *Linguagem de IA do Azure*
 
-Caso ainda não tenha um na sua assinatura, será necessário provisionar um recurso do **Serviço de Linguage de IA do Azure** em sua assinatura do Azure.
+Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço de Linguagem de IA do Azure** na sua assinatura do Azure.
 
 1. Abra o portal do Azure em `https://portal.azure.com` usando a conta Microsoft associada à sua assinatura do Azure.
-1. Pesquise **Serviços de IA do Azure** no campo de pesquisa na parte superior do portal. Em seguida, nos resultados, selecione **Criar** em **Serviço de Linguagem**.
+1. Usando o campo de pesquisa na parte superior, pesquise **serviços de IA do Azure**. Nos resultados, selecione **Criar** em **Serviço de Linguagem**.
 1. Selecione **Continuar para criar o recurso**.
 1. Provisione o recurso usando as seguintes configurações:
     - **Assinatura**: *sua assinatura do Azure*.
-    - **Grupo de recursos**: *escolha ou crie um grupo de recursos*.
-    - **Região**: *escolha uma região disponível*
+    - **Grupo de recursos**: *crie ou escolha um grupo de recursos*.
+    - **Região**:*escolha uma região disponível*
     - **Nome**: *insira um nome exclusivo*.
-    - **Tipo de preço**: selecione **F0** (*gratuito*), ou **S** (*Standard*) se F não estiver disponível.
-    - **Aviso de IA Responsável**: concordar
-1. Selecione **Examinar + criar**.
+    - **Tipo de preço**: selecione **F0** (*gratuito*) ou **S** (*padrão*) se F não estiver disponível.
+    - **Aviso de IA responsável**: concordar
+1. Selecione **Revisar + criar**.
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
-1. Vizualize a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
+1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações desta página mais adiante no exercício.
 
-## Prepare-se para desenvolver um aplicativo no Visual Studio Code
+## Preparar-se para desenvolver um aplicativo no Visual Studio Code
 
-Você desenvolverá seu aplicativo de análise de texto usando o Visual Studio Code. Os arquivos de código para seu aplicativo foram fornecidos em um repositório do GitHub.
+Você desenvolverá seu aplicativo de análise de texto usando o Visual Studio Code. Os arquivos de código do seu aplicativo foram fornecidos em um repositório do GitHub.
 
 > **Dica**: se você já clonou o repositório **mslearn-ai-language**, abra-o no Visual Studio Code. Caso contrário, siga estas etapas para cloná-lo em seu ambiente de desenvolvimento.
 
 1. Inicie o Visual Studio Code.
-2. Abra a paleta (SHIFT+CTRL+P) e execute um comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` para uma pasta local (não importa a pasta).
+2. Abra a paleta (SHIFT+CTRL+P) e execute o comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` em uma pasta local (não importa qual pasta).
 3. Depois que o repositório for clonado, abra a pasta no Visual Studio Code.
-4. Aguarde enquanto arquivos adicionais são instalados para que haja suporte aos projetos com o código C# no repositório.
+4. Aguarde enquanto os arquivos adicionais são instalados para dar suporte aos projetos de código C# no repositório.
 
     > **Observação**: se você for solicitado a adicionar os ativos necessários para compilar e depurar, selecione **Agora não**.
 
 ## Configurar seu aplicativo
 
-Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de exemplo que você usará para testar o resumo. Ambos os aplicativos apresentam a mesma funcionalidade. Primeiro, você concluirá algumas partes importantes do aplicativo para habilitar o uso do recurso Linguagem de IA do Azure.
+Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de exemplo que você usará para testar o resumo. Ambos os aplicativos apresentam a mesma funcionalidade. Primeiro, você concluirá algumas partes importantes do aplicativo para habilitar o uso do recurso de Linguagem de IA do Azure.
 
-1. No Visual Studio Code, no painel **Explorer** , acesse a pasta **Labfiles/01-analyze-text** e expanda a pasta **CSharp** ou **Python** dependendo de sua preferência de idioma e da pasta de **análise de texto** que ela contém. Cada pasta contém os arquivos específicos do idioma de um aplicativo no qual você integrará a funcionalidade de análise de texto da Linguagem de IA do Azure.
-2. Clique com o botão direito do mouse na pasta **análise de texto** que contém os arquivos de código e abra um terminal integrado. Em seguida, instale o pacote do SDK de análise de texto da Linguagem de IA do Azure executando o comando apropriado para sua preferência de idioma:
+1. No Visual Studio Code, no painel **Explorer**, navegue até a pasta **Labfiles/01-analyze-text** e expanda a pasta **CSharp** ou **Python**, dependendo da sua preferência de idioma e da pasta **text-analytics** que ela contém. Cada pasta contém os arquivos específicos de idioma de um aplicativo ao qual você integrará a funcionalidade de análise de texto da Linguagem de IA do Azure.
+2. Clique com o botão direito do mouse na pasta **text-analytics** que contém seus arquivos de código e abra um terminal integrado. Instale o pacote do SDK de Análise de Texto da Linguagem de IA do Azure executando o comando apropriado para sua preferência de idioma. Para o exercício em Python, instale também o pacote `dotenv`:
 
     **C#**:
 
@@ -58,24 +58,25 @@ Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de e
 
     ```
     pip install azure-ai-textanalytics==5.3.0
+    pip install python-dotenv
     ```
 
-3. No painel **Explorer** , na pasta **análise de texto**, abra o arquivo de configuração do idioma de sua preferência
+3. No painel **Explorer**, na pasta **text-analytics**, abra o arquivo de configuração do idioma de sua preferência
 
     - **C#**: appsettings.json
     - **Python**: .env
     
-4. Atualize os valores de configuração para incluir o **ponto de extremidade** e uma **chave** do recurso de Linguagem do Azure que você criou (disponível na página **Chaves e Ponto de Extremidade** para seu recurso de Linguagem de IA do Azure no portal do Azure)
+4. Atualize os valores de configuração para incluir o **ponto de extremidade** e uma **chave** do recurso de Linguagem do Azure que você criou (disponível na página **Chaves e Ponto de Extremidade** do seu recurso de Linguagem de IA do Azure no portal do Azure)
 5. Salve o arquivo de configuração.
 
-6. Observe que a pasta **análise de texto** contém um arquivo de código para o aplicativo cliente:
+6. Observe que a pasta **text-analysis** contém um arquivo de código para o aplicativo cliente:
 
     - **C#**: Program.cs
     - **Python**: text-analysis.py
 
-    Abra o arquivo de código e, na parte superior, sob as referências de namespace existentes, localize o comentário **Import namespaces**. Em seguida, neste comentário, adicione o seguinte código específico de linguagem para importar os namespaces necessários para usar o SDK da Análise de Texo:
+    Abra o arquivo de código e, na parte superior, sob as referências de namespace existentes, localize o comentário **Importar namespaces**. Neste comentário, adicione o seguinte código específico do idioma para importar os namespaces necessários para usar o SDK de Análise de Texto:
 
-    **C#**: Programas.cs
+    **C#**: Programs.cs
 
     ```csharp
     // import namespaces
@@ -91,9 +92,9 @@ Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de e
     from azure.ai.textanalytics import TextAnalyticsClient
     ```
 
-7. Na função **Principal**, observe que o código para carregar o ponto de extremidade de serviço e a chave de Linguagem de IA do Azure do arquivo de configuração já foi fornecido. Em seguida, localize o comentário **Criar cliente usando ponto de extremidade e chave** e adicione o seguinte código para criar um cliente para a API de Análise de Texto:
+7. Na função **Principal**, observe que o código para carregar o ponto de extremidade e a chave do serviço de Linguagem de IA do Azure do arquivo de configuração já foi fornecido. Em seguida, localize o comentário **Criar cliente usando ponto de extremidade e chave** e adicione o seguinte código para criar um cliente para a API de Análise de Texto:
 
-    **C#**: Programas.cs
+    **C#**: Programs.cs
 
     ```C#
     // Create client using endpoint and key
@@ -110,22 +111,22 @@ Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de e
     ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
     ```
 
-8. Salve suas alterações e retorne ao terminal integrado para a pasta **text-analysis** e digite o seguinte comando para executar o programa:
+8. Salve suas alterações e retorne ao terminal integrado da pasta **text-analysis** e digite o seguinte comando para executar o programa:
 
-    - **C#** : `dotnet run`
+    - **C#**: `dotnet run`
     - **Python**: `python text-analysis.py`
 
-    > **Dica**: Você pode usar o ícone **Maximizar o tamanho do painel** (**^**) na barra de ferramentas do terminal para ver mais do texto do console.
+    > **Dica**: você pode usar o ícone **Maximizar tamanho do painel** (**^**) na barra de ferramentas do terminal para ver mais do texto do console.
 
-9. Observe a saída, pois o código deve ser executado sem erros, exibindo o conteúdo de cada arquivo de texto de análise na pasta **revisões**. O aplicativo cria com êxito um cliente para a API de Análise de Texto, mas não faz uso dele. Vamos corrigir isso no próximo procedimento.
+9. Observe a saída, pois o código deve ser executado sem erros, exibindo o conteúdo de cada arquivo de texto de avaliação na pasta **comentários** O aplicativo cria com êxito um cliente para a API de Análise de Texto, mas não o utiliza. Vamos corrigir isso no próximo procedimento.
 
-## Adicionar código para detectar idioma
+## Adicionar código para detectar linguagem
 
-Agora que você criou um cliente para a API, vamos usá-lo para detectar o idioma no qual cada revisão é escrita.
+Agora que você criou um cliente para a API, vamos usá-lo para detectar o idioma no qual cada avaliação foi escrita.
 
-1. Na função **Principal**do seu programa, localize o comentário **Obter idioma**. Em seguida, sob este comentário, adicione o código necessário para detectar o idioma em cada documento de revisão:
+1. Na função **Principal** do seu programa, localize o comentário **Obter idioma**. Em seguida, sob este comentário, adicione o código necessário para detectar o idioma em cada documento de avaliação:
 
-    **C#**: Programas.cs
+    **C#**: Programs.cs
 
     ```csharp
     // Get language
@@ -141,16 +142,16 @@ Agora que você criou um cliente para a API, vamos usá-lo para detectar o idiom
     print('\nLanguage: {}'.format(detectedLanguage.primary_language.name))
     ```
 
-     > **Observação**: *neste exemplo, cada revisão é analisada individualmente, resultando em uma chamada separada para o serviço de cada arquivo. Uma abordagem alternativa é criar uma coleção de documentos e passá-los para o serviço em uma única chamada. Em ambas as abordagens, a resposta do serviço consiste em um acervo documental; é por isso que no código Python acima, o índice do primeiro (e único) documento na resposta ([0]) é especificado.*
+     > **Observação**: *neste exemplo, cada avaliação é analisada individualmente, o que resulta em uma chamada separada ao serviço para cada arquivo. Uma abordagem alternativa é criar uma coleção de documentos e transmiti-los para o serviço em uma única chamada. Em ambas as abordagens, a resposta do serviço consiste em uma coleção de documentos; é por isso que no código Python acima, o índice do primeiro (e único) documento na resposta ([0]) é especificado.*
 
-1. Salve suas alterações. Em seguida, retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
-1. Observe a saída, observando que desta vez é identificada a linguagem para cada revisão.
+1. Salve suas alterações. Retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
+1. Observe a saída, que desta vez identifica a linguagem para cada avaliação.
 
 ## Adicionar código para avaliar o sentimento
 
-A *Análise de sentimentos* é uma técnica comumente usada para classificar o texto como *positivo* ou *negativo* (ou possivelmente *neutro* ou *misto*). É comumente usado para analisar postagens de mídia social, avaliações de produtos e outros itens em que o sentimento do texto pode fornecer insights úteis.
+A *análise de sentimento* é uma técnica comumente usada para classificar o texto como *positivo* ou *negativo* (ou possivelmente *neutro* ou *misto*). É comumente usada para analisar postagens de mídia social, avaliações de produtos e outros itens em que o sentimento do texto pode fornecer insights úteis.
 
-1. Na função **Principal** do seu programa, encontre o comentário **Obter sentimento**. Em seguida, sob este comentário, adicione o código necessário para detectar o sentimento de cada documento de revisão:
+1. Na função **Principal** do seu programa, localize o comentário **Obter sentimento**. Em seguida, sob este comentário, adicione o código necessário para detectar o sentimento de cada documento de avaliação:
 
     **C#**: Program.cs
 
@@ -168,14 +169,14 @@ A *Análise de sentimentos* é uma técnica comumente usada para classificar o t
     print("\nSentiment: {}".format(sentimentAnalysis.sentiment))
     ```
 
-1. Salve suas alterações. Em seguida, retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
-1. Observe a saída, observando que o sentimento das avaliações é detectado.
+1. Salve suas alterações. Retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
+1. Observe a saída, que agora identifica o sentimento das avaliações.
 
 ## Adicionar código para identificar frases-chave
 
-Pode ser útil identificar frases-chave em um corpo de texto para ajudar a determinar os principais tópicos que ele discute.
+Pode ser útil identificar frases-chave no corpo do texto para ajudar a determinar os principais tópicos discutidos.
 
-1. Na função **Principal** do seu programa, localize o comentário **Obter frases-chave**. Em seguida, sob este comentário, adicione o código necessário para detectar as frases-chave em cada documento de análise:
+1. Na função **Principal** do seu programa, localize o comentário **Obter frases-chave**. Em seguida, sob este comentário, adicione o código necessário para detectar as frases-chave em cada documento de avaliação:
 
     **C#**: Program.cs
 
@@ -203,14 +204,14 @@ Pode ser útil identificar frases-chave em um corpo de texto para ajudar a deter
             print('\t{}'.format(phrase))
     ```
 
-1. Salve suas alterações. Em seguida, retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
-1. Observe a saída, observando que cada documento contém frases-chave que dão alguns insights sobre o que é a análise.
+1. Salve suas alterações. Retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
+1. Observe a saída, cada documento contém frases-chave que fornecem alguns insights sobre o objeto da avaliação.
 
 ## Adicionar código para extrair entidades
 
-Muitas vezes, documentos ou outros corpos de texto mencionam pessoas, lugares, períodos de tempo ou outras entidades. A API de Análise de texto pode detectar várias categorias (e subcategorias) de entidade em seu texto.
+Muitas vezes, documentos ou outros corpos de texto mencionam pessoas, lugares, períodos de tempo ou outras entidades. A API de Análise de Texto pode detectar várias categorias (e subcategorias) de entidades em seu texto.
 
-1. Na função **Principal** do seu programa, localize o comentário **Obter entidades**. Em seguida, sob este comentário, adicione o código necessário para identificar as entidades que são mencionadas em cada análise:
+1. Na função **Principal** do seu programa, localize o comentário **Obter entidades**. Em seguida, sob este comentário, adicione o código necessário para identificar as entidades mencionadas em cada documento de avaliação:
 
     **C#**: Program.cs
 
@@ -238,14 +239,14 @@ Muitas vezes, documentos ou outros corpos de texto mencionam pessoas, lugares, p
             print('\t{} ({})'.format(entity.text, entity.category))
     ```
 
-1. Salve suas alterações. Em seguida, retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
-1. Observe a saída, observando as entidades que foram detectadas no texto.
+1. Salve suas alterações. Retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
+1. Observe a saída, que identifica as entidades que foram detectadas no texto.
 
 ## Adicionar código para extrair entidades vinculadas
 
-Além das entidades categorizadas, a API de análise de texto pode detectar entidades para as quais há links conhecidos para fontes de dados, como a Wikipédia.
+Além das entidades categorizadas, a API de Análise de Texto pode detectar entidades para as quais há links conhecidos para fontes de dados, como a Wikipédia.
 
-1. Na função **Principal** do programa, localize o comentário **Obter entidades vinculadas**. Em seguida, sob este comentário, adicione o código necessário para identificar as entidades vinculadas que são mencionadas em cada análise:
+1. Na função **Principal** do seu programa, localize o comentário **Obter entidades vinculadas**. Em seguida, sob este comentário, adicione o código necessário para identificar as entidades vinculadas mencionadas em cada documento de avaliação:
 
     **C#**: Program.cs
 
@@ -273,19 +274,19 @@ Além das entidades categorizadas, a API de análise de texto pode detectar enti
             print('\t{} ({})'.format(linked_entity.name, linked_entity.url))
     ```
 
-1. Salve suas alterações. Em seguida, retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
-1. Observe a saída, observando as entidades vinculadas que são identificadas.
+1. Salve suas alterações. Retorne ao terminal integrado para a pasta **text-analysis** e execute novamente o programa.
+1. Observe a saída, que identifica as entidades vinculadas que foram detectadas.
 
 ## Limpar os recursos
 
-Se tiver concluído a exploração do serviço de linguagem de IA do Azure, exclua o grupo de recursos criado neste exercício. Este é o procedimento:
+Dica: se você tiver concluído a exploração do serviço de Linguagem de IA do Azure, exclua os recursos criados no exercício. Este é o procedimento:
 
 1. Abra o portal do Azure em `https://portal.azure.com` usando a conta Microsoft associada à sua assinatura do Azure.
 
-2. Navegue até o recurso de linguagem de IA do Azure que você criou neste laboratório.
+2. Navegue até o recurso de Linguagem de IA do Azure que você criou neste laboratório.
 
-3. Na página de recursos, selecione **Excluir** e siga as instruções para excluir o recurso.
+3. Na página do recurso, selecione **Excluir** e siga as instruções para excluir o recurso.
 
 ## Mais informações
 
-Para obter mais informações sobre o uso da **Linguagem de IA do Azure**, veja a [documentação](https://learn.microsoft.com/azure/ai-services/language-service/).
+Para obter mais informações sobre como usar a **Linguagem de IA do Azure**, consulte a [documentação](https://learn.microsoft.com/azure/ai-services/language-service/).
