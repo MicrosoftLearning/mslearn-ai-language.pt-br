@@ -214,7 +214,7 @@ Agora, você está pronto para usar o serviço de Linguagem de IA do Azure para 
     ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
     ```
 
-1. na função **Principal**, observe que o código existente lê todos os arquivos na pasta **articles** e cria uma lista contendo seu conteúdo. No caso do código C#, a lista de objetos **TextDocumentInput** é usada para incluir o nome do arquivo como um ID e a linguagem. Em Python, uma lista simples do conteúdo do texto é usada.
+1. Na função **Main**, observe que o código existente lê todos os arquivos na pasta **anúncios** e cria uma lista que contém seu conteúdo. No caso do código C#, a lista de objetos **TextDocumentInput** é usada para incluir o nome do arquivo como um ID e a linguagem. Em Python, uma lista simples do conteúdo do texto é usada.
 1. Localize o comentário **Extrair entidades** e adicione o seguinte código:
 
     **C#**: Program.cs
@@ -299,6 +299,6 @@ Agora, seu aplicativo está pronto para teste.
 
 1. Observe a saída. O aplicativo deve listar detalhes das entidades encontradas em cada arquivo de texto.
 
-## Limpar
+## Limpeza
 
 Quando não precisar mais do projeto, você poderá excluí-lo de sua página de **Projetos** no Language Studio. Você também pode remover o serviço de Linguagem de IA do Azure e a conta de armazenamento associada a ele no [portal do Azure](https://portal.azure.com).
