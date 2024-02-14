@@ -12,7 +12,7 @@ O **Tradutor de IA do Azure** é um serviço que permite a você traduzir textos
 
 Caso ainda não tenha um na sua assinatura, provisione um recurso do **Tradutor de IA do Azure**.
 
-1. Abra o portal do Azure em `https://portal.azure.com` usando a conta Microsoft associada à sua assinatura do Azure.
+1. Abra o portal do Azure em `https://portal.azure.com` e entre usando a conta Microsoft associada à sua assinatura do Azure.
 1. No campo de pesquisa superior, procure os **Serviços de IA do Azure** e pressione **Enter** e selecione **Criar** em **Tradutor** nos resultados.
 1. Crie um recurso com as seguintes configurações:
     - **Assinatura**: *sua assinatura do Azure*
@@ -20,10 +20,10 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso do **Tradutor 
     - **Região**: *escolha uma região disponível*
     - **Nome**: *insira um nome exclusivo*
     - **Tipo de preço**: selecione **F0** (*gratuito*), ou **S** (*Standard*) se F não estiver disponível.
-    - **Aviso de IA Responsável**: concordar
-1. Selecione **Examinar + criar**.
+    - **Aviso de IA responsável**: concordar
+1. Selecione **Revisar + criar**.
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
-1. Vizualize a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
+1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações desta página mais adiante no exercício.
 
 ## Prepare-se para desenvolver um aplicativo no Visual Studio Code
 
@@ -32,9 +32,9 @@ Você desenvolverá seu aplicativo de tradução de texto usando o Visual Studio
 > **Dica**: se você já clonou o repositório **mslearn-ai-language**, abra-o no Visual Studio Code. Caso contrário, siga estas etapas para cloná-lo em seu ambiente de desenvolvimento.
 
 1. Inicie o Visual Studio Code.
-2. Abra a paleta (SHIFT+CTRL+P) e execute um comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` para uma pasta local (não importa a pasta).
+2. Abra a paleta (SHIFT+CTRL+P) e execute o comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` em uma pasta local (não importa qual pasta).
 3. Depois que o repositório for clonado, abra a pasta no Visual Studio Code.
-4. Aguarde enquanto arquivos adicionais são instalados para que haja suporte aos projetos com o código C# no repositório.
+4. Aguarde enquanto os arquivos adicionais são instalados para dar suporte aos projetos de código C# no repositório.
 
     > **Observação**: se você for solicitado a adicionar os ativos necessários para compilar e depurar, selecione **Agora não**.
 
@@ -77,7 +77,7 @@ Agora você está pronto para usar o Tradutor de IA do Azure para traduzir texto
     - **C#**: Program.cs
     - **Python**: translate.py
 
-    Abra o arquivo de código e, na parte superior, sob as referências de namespace existentes, localize o comentário **Importar namespaces**. Em seguida, neste comentário, adicione o seguinte código específico de linguagem para importar os namespaces necessários para usar o SDK da Análise de Texo:
+    Abra o arquivo de código e, na parte superior, sob as referências de namespace existentes, localize o comentário **Importar namespaces**. Neste comentário, adicione o seguinte código específico do idioma para importar os namespaces necessários para usar o SDK de Análise de Texto:
 
     **C#**: Programs.cs
 
@@ -135,7 +135,7 @@ Agora você está pronto para usar o Tradutor de IA do Azure para traduzir texto
         }
         else
         {
-            Console.WriteLine($"({targetLanguage} is not a supported language.");
+            Console.WriteLine($"{targetLanguage} is not a supported language.");
         }
 
     }
@@ -169,7 +169,8 @@ Agora você está pronto para usar o Tradutor de IA do Azure para traduzir texto
     while (inputText.ToLower() != "quit")
     {
         Console.WriteLine("Enter text to translate ('quit' to exit)");
-        inputText = Console.ReadLine();if (inputText.ToLower() != "quit")
+        inputText = Console.ReadLine();
+        if (inputText.ToLower() != "quit")
         {
             Response<IReadOnlyList<TranslatedTextItem>> translationResponse = await client.TranslateAsync(targetLanguage, inputText).ConfigureAwait(false);
             IReadOnlyList<TranslatedTextItem> translations = translationResponse.Value;
@@ -205,7 +206,7 @@ Agora, seu aplicativo está pronto para teste.
 
 1. No terminal integrado para a pasta **Traduzir texto**, digite o seguinte comando para executar o programa:
 
-    - **C#** : `dotnet run`
+    - **C#**: `dotnet run`
     - **Python**: `python translate.py`
 
     > **Dica**: você pode usar o ícone **Maximizar o tamanho do painel** (**^**) na barra de ferramentas do terminal para ver mais do texto do console.
@@ -214,6 +215,6 @@ Agora, seu aplicativo está pronto para teste.
 1. Insira uma frase a ser traduzida (por exemplo `This is a test` ou `C'est un test`) e exiba os resultados, que devem detectar o idioma de origem e traduzir o texto para o idioma de destino.
 1. Quando terminar, digite `quit`. Você pode executar o aplicativo novamente e escolher um idioma de destino diferente.
 
-## Limpar
+## Limpeza
 
 Quando não precisar mais do projeto, você poderá excluir o recurso de Tradutor de IA do Azure no [portal do Azure](https://portal.azure.com).
