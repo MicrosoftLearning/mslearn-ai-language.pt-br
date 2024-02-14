@@ -20,21 +20,21 @@ Essa variante de entrada é um exemplo de um *enunciado* (algo que um usuário p
 
 ## Provisionar um recurso da *Linguagem de IA do Azure*
 
-Caso ainda não tenha um na sua assinatura, será necessário provisionar um recurso do **Serviço de Linguage de IA do Azure** em sua assinatura do Azure.
+Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço de Linguagem de IA do Azure** na sua assinatura do Azure.
 
-1. Abra o portal do Azure em `https://portal.azure.com` usando a conta Microsoft associada à sua assinatura do Azure.
-1. Pesquise **Serviços de IA do Azure** no campo de pesquisa na parte superior do portal. Em seguida, nos resultados, selecione **Criar** em **Serviço de Linguagem**.
+1. Abra o portal do Azure em `https://portal.azure.com` e entre usando a conta Microsoft associada à sua assinatura do Azure.
+1. Usando o campo de pesquisa na parte superior, pesquise **serviços de IA do Azure**. Nos resultados, selecione **Criar** em **Serviço de Linguagem**.
 1. Selecione **Continuar para criar o recurso**.
 1. Provisione o recurso usando as seguintes configurações:
     - **Assinatura**: *sua assinatura do Azure*.
-    - **Grupo de recursos**: *escolha ou crie um grupo de recursos*.
-    - **Região**: *escolha uma região disponível*
+    - **Grupo de recursos**: *crie ou escolha um grupo de recursos*.
+    - **Região**:*escolha uma região disponível*
     - **Nome**: *insira um nome exclusivo*.
-    - **Tipo de preço**: selecione **F0** (*gratuito*), ou **S** (*Standard*) se F não estiver disponível.
-    - **Aviso de IA Responsável**: concordar
-1. Selecione **Examinar + criar**.
+    - **Tipo de preço**: selecione **F0** (*gratuito*) ou **S** (*padrão*) se F não estiver disponível.
+    - **Aviso de IA responsável**: concordar
+1. Selecione **Revisar + criar**.
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
-1. Vizualize a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
+1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
 
 ## Criar um projeto de compreensão da linguagem coloquial
 
@@ -42,18 +42,18 @@ Agora que você criou um recurso de criação, pode usá-lo para criar um projet
 
 1. Em uma nova guia do navegador, abra o portal do Azure AI Language Studio em `https://language.cognitive.azure.com/` e entre usando a conta Microsoft associada à sua assinatura do Azure.
 
-1. Se for solicitado a escolher um recurso de idioma, selecione as seguintes configurações:
+1. Se for solicitado a escolher um recurso de linguagem, selecione as seguintes configurações:
 
     - **Azure Directory**: o diretório do Azure contendo a sua assinatura.
     - **Assinatura do Azure**: sua assinatura do Azure.
     - **Tipo de recurso**: linguagem.
     - **Recurso de linguagem**: o recurso de Linguagem de IA do Azure criado anteriormente.
 
-    Se você <u>não</u> foi solicitado a escolher um recurso de idioma, pode ser porque você tem vários recursos de idioma em sua assinatura; nesse caso:
+    Se você <u>não</u> foi solicitado a escolher um recurso de linguagem, pode ser porque você tem vários recursos de linguagem em sua assinatura; nesse caso:
 
-    1. Na barra na parte superior da página, selecione o botão **Configurações (&#9881;)**.
+    1. Na barra na parte superior da página, clique no botão **Configurações (&#9881;)**.
     2. Na página **Configurações**, exiba a guia **Recursos**.
-    3. Selecione o recurso de idioma que você acabou de criar e clique em **Alternar recurso**.
+    3. Selecione o recurso de linguagem que você acabou de criar e clique em **Alternar recurso**.
     4. Na parte superior da página, clique em **Language Studio** para retornar à página incial do Language Studio
 
 1. Na parte superior do portal do Language Studio, no menu **Criar**, selecione **Compreensão da linguagem coloquial**.
@@ -111,7 +111,7 @@ Agora que você adicionou algumas intenções, vamos treinar o modelo de linguag
 
 1. No painel à esquerda, selecione **Trabalhos de treinamento**. Então escolha **+ Iniciar um trabalho de treinamento**.
 
-1. Na caixa de diálogo **Iniciar um trabalho de treinamento**, selecione a opção para treinar um novo modelo, nomeie-o como "Relógio''. Selecione o modo de **treinamento padrão** e as opções padrão de **divisão de dados**.
+1. Na caixa de diálogo **Iniciar um trabalho de treinamento**, selecione a opção para treinar um novo modelo e dê o nome `Clock`. Selecione o modo de **treinamento padrão** e as opções padrão de **divisão de dados**.
 
 1. Para iniciar o processo de treinamento do seu modelo, selecione **Treinar**.
 
@@ -237,7 +237,7 @@ O serviço de Linguagem de IA do Azure fornece um conjunto de entidades *prédef
 1. Na página da entidade **Data**, na seção **Aprendido**, verifique se **Não obrigatório** está selecionada. Em seguida, na seção **predefinido**, selecione **&#65291; Adicionar novo predefinido**.
 
 1. Na lista **Selecionar predefinido**, selecione **DateTime** e, em seguida, selecione **Salvar**.
-1. Depois de adicionar uma entidade predefinida, retorne à página **Rotulagem de dados**
+1. Depois de adicionar a entidade predefinida, retorne à página **Rotulagem de dados**
 1. Selecione a intenção **GetDay** e insira o seguinte novo exemplo de enunciado:
 
     `what day was 01/01/1901?`
@@ -299,9 +299,9 @@ Você desenvolverá seu aplicativo de reconhecimento de linguagem usando o Visua
 > **Dica**: se você já clonou o repositório **mslearn-ai-language**, abra-o no Visual Studio Code. Caso contrário, siga estas etapas para cloná-lo em seu ambiente de desenvolvimento.
 
 1. Inicie o Visual Studio Code.
-2. Abra a paleta (SHIFT+CTRL+P) e execute um comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` para uma pasta local (não importa a pasta).
+2. Abra a paleta (SHIFT+CTRL+P) e execute o comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` em uma pasta local (não importa qual pasta).
 3. Depois que o repositório for clonado, abra a pasta no Visual Studio Code.
-4. Aguarde enquanto arquivos adicionais são instalados para que haja suporte aos projetos com o código C# no repositório.
+4. Aguarde enquanto os arquivos adicionais são instalados para dar suporte aos projetos de código C# no repositório.
 
     > **Observação**: se você for solicitado a adicionar os ativos necessários para compilar e depurar, selecione **Agora não**.
 
@@ -341,7 +341,7 @@ Agora você está pronto para adicionar o código necessário para importar as b
     - **C#**: Program.cs
     - **Python**: clock-client.py
 
-    Abra o arquivo de código e, na parte superior, sob as referências de namespace existentes, localize o comentário **Importar namespaces**. Em seguida, neste comentário, adicione o seguinte código específico de linguagem para importar os namespaces necessários para usar o SDK da Análise de Texo:
+    Abra o arquivo de código e, na parte superior, sob as referências de namespace existentes, localize o comentário **Importar namespaces**. Neste comentário, adicione o seguinte código específico do idioma para importar os namespaces necessários para usar o SDK de Análise de Texto:
 
     **C#**: Programs.cs
 
@@ -579,7 +579,7 @@ Agora você está pronto para adicionar o código necessário para importar as b
 
 1. Salve suas alterações e retorne ao terminal integrado para a pasta **clock-client** e digite o seguinte comando para executar o programa:
 
-    - **C#** : `dotnet run`
+    - **C#**: `dotnet run`
     - **Python**: `python clock-client.py`
 
     > **Dica**: você pode usar o ícone **Maximizar o tamanho do painel** (**^**) na barra de ferramentas do terminal para ver mais do texto do console.
@@ -609,11 +609,11 @@ Agora você está pronto para adicionar o código necessário para importar as b
 
 ## Limpar os recursos
 
-Se tiver concluído a exploração do serviço de linguagem de IA do Azure, exclua o grupo de recursos criado neste exercício. Este é o procedimento:
+Dica: se você tiver concluído a exploração do serviço de Linguagem de IA do Azure, exclua os recursos criados no exercício. Este é o procedimento:
 
-1. Abra o portal do Azure em `https://portal.azure.com` usando a conta Microsoft associada à sua assinatura do Azure.
-2. Navegue até o recurso de linguagem de IA do Azure que você criou neste laboratório.
-3. Na página de recursos, selecione **Excluir** e siga as instruções para excluir o recurso.
+1. Abra o portal do Azure em `https://portal.azure.com` e entre usando a conta Microsoft associada à sua assinatura do Azure.
+2. Navegue até o recurso de Linguagem de IA do Azure que você criou neste laboratório.
+3. Na página do recurso, selecione **Excluir** e siga as instruções para excluir o recurso.
 
 ## Mais informações
 
