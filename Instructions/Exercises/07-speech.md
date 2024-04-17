@@ -4,7 +4,7 @@ lab:
   module: Module 4 - Create speech-enabled apps with Azure AI services
 ---
 
-# Como usar o reconhecimento de fala e a sintetização de voz
+# Reconhecer e sintetizar fala
 
 A **Fala de IA do Azure** é um serviço que fornece funcionalidade relacionada à fala, incluindo:
 
@@ -19,7 +19,7 @@ Neste exercício, você usará essas duas APIs para implementar um aplicativo de
 
 Caso ainda não tenha um na sua assinatura, provisione um recurso de **Fala de IA do Azure**.
 
-1. Abra o portal do Azure em `https://portal.azure.com` usando a conta Microsoft associada à sua assinatura do Azure.
+1. Abra o portal do Azure em `https://portal.azure.com` e entre usando a conta Microsoft associada à sua assinatura do Azure.
 1. No campo de pesquisa na parte superior, procure **serviços de IA do Azure** e pressione **Enter** e selecione **Criar** em **Serviço de fala** nos resultados.
 1. Crie um recurso com as seguintes configurações:
     - **Assinatura**: *sua assinatura do Azure*
@@ -27,10 +27,10 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso de **Fala de I
     - **Região**: *escolha uma região disponível*
     - **Nome**: *insira um nome exclusivo*
     - **Tipo de preço**: selecione **F0** (*gratuito*), ou **S** (*Standard*) se F não estiver disponível.
-    - **Aviso de IA Responsável**: concordar
-1. Selecione **Examinar + criar**.
+    - **Aviso de IA responsável**: concordar
+1. Selecione **Revisar + criar** e, em seguida, selecione **Criar** para provisionar o recurso.
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
-1. Vizualize a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
+1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações desta página mais adiante no exercício.
 
 ## Prepare-se para desenvolver um aplicativo no Visual Studio Code
 
@@ -39,9 +39,9 @@ Você desenvolverá seu aplicativo de fala usando o Visual Studio Code. Os arqui
 > **Dica**: se você já clonou o repositório **mslearn-ai-language**, abra-o no Visual Studio Code. Caso contrário, siga estas etapas para cloná-lo em seu ambiente de desenvolvimento.
 
 1. Inicie o Visual Studio Code.
-1. Abra a paleta (SHIFT+CTRL+P) e execute um comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` para uma pasta local (não importa a pasta).
+1. Abra a paleta (SHIFT+CTRL+P) e execute o comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` em uma pasta local (não importa qual pasta).
 1. Depois que o repositório for clonado, abra a pasta no Visual Studio Code.
-1. Aguarde enquanto arquivos adicionais são instalados para que haja suporte aos projetos com o código C# no repositório.
+1. Aguarde enquanto os arquivos adicionais são instalados para dar suporte aos projetos de código C# no repositório.
 
     > **Observação**: se você for solicitado a adicionar os ativos necessários para compilar e depurar, selecione **Agora não**.
 
@@ -182,7 +182,7 @@ Agora que você tem um **SpeechConfig** para o serviço de fala em seu recurso d
     **Python**
 
     ```
-    pip install playsound==1.3.0
+    pip install playsound==1.2.2
     ```
 
 1. No arquivo de código do programa, nas importações de namespace existentes, adicione o seguinte código para importar a biblioteca que você acabou de instalar:
