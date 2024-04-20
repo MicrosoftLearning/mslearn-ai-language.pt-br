@@ -21,7 +21,7 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso do **Tradutor 
     - **Nome**: *insira um nome exclusivo*
     - **Tipo de preço**: selecione **F0** (*gratuito*), ou **S** (*Standard*) se F não estiver disponível.
     - **Aviso de IA responsável**: concordar
-1. Selecione **Revisar + criar**.
+1. Selecione **Revisar + criar** e, em seguida, selecione **Criar** para provisionar o recurso.
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
 1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações desta página mais adiante no exercício.
 
