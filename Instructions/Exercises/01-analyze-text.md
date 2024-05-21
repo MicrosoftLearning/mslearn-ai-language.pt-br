@@ -45,8 +45,8 @@ Você desenvolverá seu aplicativo de análise de texto usando o Visual Studio C
 
 Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de exemplo que você usará para testar o resumo. Ambos os aplicativos apresentam a mesma funcionalidade. Primeiro, você concluirá algumas partes importantes do aplicativo para habilitar o uso do recurso de Linguagem de IA do Azure.
 
-1. No Visual Studio Code, no painel **Explorer**, navegue até a pasta **Labfiles/01-analyze-text** e expanda a pasta **CSharp** ou **Python**, dependendo da sua preferência de idioma e da pasta **text-analytics** que ela contém. Cada pasta contém os arquivos específicos de idioma de um aplicativo ao qual você integrará a funcionalidade de análise de texto da Linguagem de IA do Azure.
-2. Clique com o botão direito do mouse na pasta **text-analytics** que contém seus arquivos de código e abra um terminal integrado. Instale o pacote do SDK de Análise de Texto da Linguagem de IA do Azure executando o comando apropriado para sua preferência de idioma. Para o exercício em Python, instale também o pacote `dotenv`:
+1. No Visual Studio Code, no painel **Explorer**, navegue até a pasta **Labfiles/01-analyze-text** e expanda a pasta **CSharp** ou **Python**, dependendo da sua preferência de idioma, e a pasta **text-analysis** contida dentro dela. Cada pasta contém os arquivos específicos de idioma de um aplicativo ao qual você integrará a funcionalidade de análise de texto da Linguagem de IA do Azure.
+2. Clique com o botão direito na pasta **text-analysis** que contém seus arquivos de código e abra um terminal integrado. Instale o pacote do SDK de Análise de Texto da Linguagem de IA do Azure executando o comando apropriado para sua preferência de idioma. Para o exercício em Python, instale também o pacote `dotenv`:
 
     **C#**:
 
@@ -61,7 +61,7 @@ Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de e
     pip install python-dotenv
     ```
 
-3. No painel **Explorer**, na pasta **text-analytics**, abra o arquivo de configuração do idioma de sua preferência
+3. No painel **Explorer**, na pasta **text-analysis**, abra o arquivo de configuração do seu idioma preferido
 
     - **C#**: appsettings.json
     - **Python**: .env
