@@ -15,7 +15,7 @@ Para testar a extração de entidade personalizada, criaremos um modelo e o trei
 Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço de Linguagem de IA do Azure**. Além disso, use a classificação de textos personalizada; você precisa habilitar o **recurso de extração e classificação de textos personalizada**.
 
 1. Em um navegador, abra o Portal do Azure em `https://portal.azure.com` e entre com sua conta Microsoft.
-1. Selecione o botão **Criar um recurso**, procure por *Linguagem* e crie um recurso do **Serviço de Linguagem de IA do Azure**. Quando perguntado sobre *Recursos adicionais*, selecione **Extração e classificação de textos personalizada**. Crie o recurso com as seguintes configurações:
+1. Selecione o botão **Criar um recurso**, procure por *Idioma* e crie um recurso do **Serviço de linguagem**. Quando estiver na página para *Selecionar recursos adicionais*, selecione o recurso personalizado que contém a **Extração de reconhecimento de entidade nomeada personalizada**. Crie o recurso com as seguintes configurações:
     - **Assinatura**: *sua assinatura do Azure*
     - **Grupo de recursos**: *selecione ou crie um grupo de recursos*.
     - **Região**: *escolha uma região disponível*
@@ -48,7 +48,7 @@ Depois de criar o serviço de Linguagem de IA do Azure e a conta de armazenament
 
 ## Crie um projeto de reconhecimento de entidade nomeada personalizada
 
-Agora, você está pronto para recriar um projeto de reconhecimento de entidade nomeada personalizada. Esse projeto proporciona um local de trabalho para criar, treinar e implantar o modelo.
+Agora você está pronto para criar um projeto personalizado de reconhecimento de entidade nomeada. Esse projeto proporciona um local de trabalho para criar, treinar e implantar o modelo.
 
 > **OBSERVAÇÃO**: você também pode criar, compilar, treinar e implantar seu modelo por meio da API REST.
 
@@ -62,12 +62,12 @@ Agora, você está pronto para recriar um projeto de reconhecimento de entidade 
 
     Se você <u>não</u> foi solicitado a escolher um recurso de linguagem, pode ser porque você tem vários recursos de linguagem em sua assinatura; nesse caso:
 
-    1. Na barra na parte superior da página, clique no botão **Configurações (&#9881;)**.
+    1. Na barra na parte superior da página, selecione o botão **Configurações(&#9881;)**.
     2. Na página **Configurações**, exiba a guia **Recursos**.
-    3. Selecione o recurso de linguagem que você acabou de criar e clique em **Alternar recurso**.
-    4. Na parte superior da página, clique em **Language Studio** para retornar à home page do Language Studio
+    3. Selecione o recurso de idioma que você acabou de criar e clique em **Alternar recurso**.
+    4. Na parte superior da página, clique em **Language Studio** para retornar à home page do Language Studio.
 
-1. Na parte superior do portal, no menu **Criar novo**, selecione *Reconhecimento de entidade nomeada personalizada**.
+1. Na parte superior do portal, no menu **Criar novo**, selecione **Reconhecimento personalizado de entidade nomeada**.
 
 1. Crie um novo projeto com as seguintes configurações:
     - **Conexão de armazenamento**: *esse valor provavelmente já está preenchido. Se ainda não estiver, altere-o para sua conta de armazenamento*
@@ -95,7 +95,7 @@ Agora que seu projeto foi criado, você precisa rotular os dados a fim de treina
     1. Realce o texto *Denver, CO* e selecione a entidade **Location**.
     1. Realce o texto *$90* e selecione a entidade **Price**.
 1.No painel **Atividade**, observe que este documento será adicionado ao conjunto de dados para treinar o modelo.
-1. Use o botão **Próximo documento** para avançar para o próximo documento e continuar atribuindo texto às entidades apropriadas para todo o conjunto de documentos, adicionando-os todos ao conjunto de dados de treinamento.
+1. Use o botão **Próximo documento** para acessar o documento seguinte e continue atribuindo texto às entidades apropriadas em todo o conjunto de documentos, adicionando-os ao conjunto de dados de treinamento.
 1. Depois de rotular o último documento (*Ad 9.txt*), salve os rótulos.
 
 ## Treinar seu modelo
@@ -136,13 +136,16 @@ Para testar os recursos de extração de entidade personalizada do serviço de L
 1. Inicie o Visual Studio Code.
 2. Abra a paleta (SHIFT+CTRL+P) e execute o comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` em uma pasta local (não importa qual pasta).
 3. Depois que o repositório for clonado, abra a pasta no Visual Studio Code.
+
+    > **Observação**: Se o Visual Studio Code mostrar uma mensagem pop-up para solicitar que você confie no código que está abrindo, clique na opção **Sim, confio nos autores** no pop-up.
+
 4. Aguarde enquanto os arquivos adicionais são instalados para dar suporte aos projetos de código C# no repositório.
 
     > **Observação**: se você for solicitado a adicionar os ativos necessários para compilar e depurar, selecione **Agora não**.
 
 ## Configurar seu aplicativo
 
-Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de exemplo que você usará para testar o resumo. Ambos os aplicativos apresentam a mesma funcionalidade. Primeiro, você concluirá algumas partes importantes do aplicativo para habilitar o uso do recurso de Linguagem de IA do Azure.
+Os aplicativos para C# e Python foram fornecidos. Ambos os aplicativos apresentam a mesma funcionalidade. Primeiro, você concluirá algumas partes importantes do aplicativo para habilitar o uso do recurso de Linguagem de IA do Azure.
 
 1. No Visual Studio Code, no painel **Explorer**, navegue até a pasta **Labfiles/05-custom-entity-recognition** e expanda a pasta **CSharp** ou **Python**, dependendo da sua preferência de linguagem e da pasta **custom-entities** que ela contém. Cada pasta contém os arquivos específicos de linguagem de um aplicativo ao qual você integrará a funcionalidade de classificação de textos da Linguagem de IA do Azure.
 1. Clique com o botão direito do mouse na pasta **custom-entities** que contém seus arquivos de código e abra um terminal integrado. Instale o pacote do SDK de Análise de Texto da Linguagem de IA do Azure executando o comando apropriado para sua preferência de linguagem:
@@ -164,7 +167,7 @@ Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de e
     - **C#**: appsettings.json
     - **Python**: .env
     
-1. Atualize os valores de configuração para incluir o **ponto de extremidade** e uma **chave** do recurso de Linguagem do Azure que você criou (disponível na página **Chaves e Ponto de Extremidade** do seu recurso de Linguagem de IA do Azure no portal do Azure). O arquivo já deve conter os nomes de projeto e implantação para seu modelo de extração de entidade personalizada.
+1. Atualize os valores de configuração para incluir o  **ponto de extremidade** e uma **chave** do recurso de linguagem do Azure que você criou (disponível na página **Chaves e Ponto de Extremidade** para seu recurso de Linguagem de IA do Azure no portal do Azure). O arquivo já deve conter os nomes de projeto e implantação para o modelo de extração de entidade personalizada.
 1. Salve o arquivo de configuração.
 
 ## Adicionar código para extrair entidades
@@ -214,7 +217,7 @@ Agora, você está pronto para usar o serviço de Linguagem de IA do Azure para 
     ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
     ```
 
-1. Na função **Main**, observe que o código existente lê todos os arquivos na pasta **anúncios** e cria uma lista que contém seu conteúdo. No caso do código C#, a lista de objetos **TextDocumentInput** é usada para incluir o nome do arquivo como um ID e a linguagem. Em Python, uma lista simples do conteúdo do texto é usada.
+1. Na função **Main**, observe que o código existente lê todos os arquivos na pasta **anúncios** e cria uma lista que contém seu conteúdo. No caso do código C#, uma lista de objetos **TextDocumentInput** é usada para incluir o nome do arquivo como uma ID e o idioma. Em Python, uma lista simples do conteúdo do texto é usada.
 1. Localize o comentário **Extrair entidades** e adicione o seguinte código:
 
     **C#**: Program.cs
@@ -292,7 +295,7 @@ Agora, seu aplicativo está pronto para teste.
 
 1. No terminal integrado da pasta **classify-text**, digite o seguinte comando para executar o programa:
 
-    - **C#**: `dotnet run`
+    - **C#** : `dotnet run`
     - **Python**: `python custom-entities.py`
 
     > **Dica**: você pode usar o ícone **Maximizar tamanho do painel** (**^**) na barra de ferramentas do terminal para ver mais do texto do console.

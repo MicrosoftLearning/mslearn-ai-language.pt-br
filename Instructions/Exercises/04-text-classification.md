@@ -12,7 +12,7 @@ Para testar a classificação de textos personalizada do serviço de Linguagem d
 
 ## Provisionar um recurso da *Linguagem de IA do Azure*
 
-Caso ainda não tenha um na sua assinatura, provisione um recurso de **serviço de Linguagem de IA do Azure**. Além disso, use a classificação de textos personalizada, você precisa habilitar o recurso **classificação de textos personalizada e extração**.
+Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço de Linguagem de IA do Azure**. Além disso, use a classificação de textos personalizada; você precisa habilitar o **recurso de extração e classificação de textos personalizada**.
 
 1. Em um navegador, abra o portal do Azure em `https://portal.azure.com` e entre com sua conta Microsoft.
 1. Selecione o campo de pesquisa na parte superior do portal, pesquise `Azure AI services` e crie um recurso do **Serviço de Linguagem**.
@@ -30,7 +30,7 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso de **serviço 
 
 1. Selecione **Revisar + criar** e, em seguida, selecione **Criar** para provisionar o recurso.
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
-1. Vizualize a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
+1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
 
 ## Carregar artigos de exemplo
 
@@ -42,9 +42,9 @@ Após criar o serviço de Linguagem de IA do Azure e a conta de armazenamento, v
 
 1. Na sua conta de armazenamento, selecione **Configuração**, localizada abaixo de **Configurações**. Na tela configuração, habilite a opção **Permitir acesso anônimo de blob** e selecione **Salvar**.
 
-1. Selecione **Contêineres** no menu esquerdo localizado abaixo de **Armazenamento de dados**. Na tela exibida, selecione **+ Contêiner**. Dê ao contêiner o nome `articles`, e defina **nível de acesso anônimo** para **Contêiner (acesso de leitura anônimo para contêineres e blobs)**.
+1. Selecione **Contêineres** no menu esquerdo localizado abaixo de **Armazenamento de dados**. Na tela exibida, selecione **+ Contêiner**. Dê ao contêiner o nome `articles` e defina **Nível de acesso anônimo** como **Contêiner (acesso de leitura anônimo para contêineres e blobs)**.
 
-    > **OBSERVAÇÃO**: ao configurar uma conta de armazenamento para uma solução real, tenha cuidado para atribuir o nível de acesso apropriado. Para saber mais sobre cada nível de acesso, confira a [documentação de armazenamento do Azure](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
+    > **OBSERVAÇÃO**: ao configurar uma conta de armazenamento para uma solução real, tome cuidado para atribuir o nível de acesso apropriado. Para saber mais sobre cada nível de acesso, confira a [documentação de armazenamento do Azure](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
 
 1. Depois de criar o contêiner, selecione-o e selecione o botão **Carregar**. Selecione **Procurar arquivos** para procurar os artigos de exemplo baixados. Em seguida, selecione **Carregar**.
 
@@ -55,18 +55,18 @@ Após a configuração ser concluída, crie um projeto de classificação de tex
 > **OBSERVAÇÃO**: este laboratório utiliza o **Language Studio**, mas você também pode compilar, treinar e implantar um modelo usando a API REST.
 
 1. Em uma nova guia do navegador, abra o portal do Azure AI Language Studio em `https://language.cognitive.azure.com/` e entre usando a conta Microsoft associada à sua assinatura do Azure.
-1. Se for solicitado a escolher um recurso de idioma, selecione as seguintes configurações:
+1. Se for solicitado a escolher um recurso de linguagem, selecione as seguintes configurações:
 
     - **Azure Directory**: o diretório do Azure contendo a sua assinatura.
     - **Assinatura do Azure**: sua assinatura do Azure.
     - **Tipo de recurso**: linguagem.
     - **Recurso de linguagem**: o recurso de Linguagem de IA do Azure criado anteriormente.
 
-    Se você <u>não</u> foi solicitado a escolher um recurso de idioma, pode ser porque você tem vários recursos de idioma em sua assinatura; nesse caso:
+    Se você <u>não</u> foi solicitado a escolher um recurso de linguagem, pode ser porque você tem vários recursos de linguagem em sua assinatura; nesse caso:
 
-    1. Na barra na parte superior da página, selecione o botão **Configurações (&#9881;)**.
+    1. Na barra na parte superior da página, clique no botão **Configurações (&#9881;)**.
     2. Na página **Configurações**, exiba a guia **Recursos**.
-    3. Selecione o recurso de idioma que você acabou de criar e clique em **Alternar recurso**.
+    3. Selecione o recurso de linguagem que você acabou de criar e clique em **Alternar recurso**.
     4. Na parte superior da página, clique em **Language Studio** para retornar à página incial do Language Studio
 
 1. Na parte superior do portal, no menu **Criar novo**, selecione **Classificação de textos personalizada**.
@@ -152,9 +152,12 @@ Para testar os recursos de classificação de textos personalizada do serviço d
 > **Dica**: se você já clonou o repositório **mslearn-ai-language**, abra-o no Visual Studio Code. Caso contrário, siga estas etapas para cloná-lo em seu ambiente de desenvolvimento.
 
 1. Inicie o Visual Studio Code.
-2. Abra a paleta (SHIFT+CTRL+P) e execute um comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` para uma pasta local (não importa a pasta).
+2. Abra a paleta (SHIFT+CTRL+P) e execute o comando **Git: Clone** para clonar o repositório `https://github.com/MicrosoftLearning/mslearn-ai-language` em uma pasta local (não importa qual pasta).
 3. Depois que o repositório for clonado, abra a pasta no Visual Studio Code.
-4. Aguarde enquanto arquivos adicionais são instalados para que haja suporte aos projetos com o código C# no repositório.
+
+    > **Observação**: Se o Visual Studio Code mostrar uma mensagem pop-up para solicitar que você confie no código que está abrindo, clique na opção **Sim, confio nos autores** no pop-up.
+
+4. Aguarde enquanto os arquivos adicionais são instalados para dar suporte aos projetos de código C# no repositório.
 
     > **Observação**: se você for solicitado a adicionar os ativos necessários para compilar e depurar, selecione **Agora não**.
 
@@ -182,7 +185,7 @@ Aplicativos para C# e Python foram fornecidos, bem como um arquivo de texto de e
     - **C#**: appsettings.json
     - **Python**: .env
     
-1. Atualize os valores de configuração para incluir o  **ponto de extremidade** e uma **chave** do recurso de linguagem do Azure que você criou (disponível na página **Chaves e Ponto de Extremidade** para seu recurso de Linguagem de IA do Azure no portal do Azure). O arquivo já deve conter os nomes de projeto e implantação para seu modelo de classificação de textos.
+1. Atualize os valores de configuração para incluir o  **ponto de extremidade** e uma **chave** do recurso de linguagem do Azure que você criou (disponível na página **Chaves e Ponto de Extremidade** para seu recurso de Linguagem de IA do Azure no portal do Azure). O arquivo já deve conter os nomes do projeto e da implantação do seu modelo de classificação de texto.
 1. Salve o arquivo de configuração.
 
 ## Adicionar código para classificar documentos
@@ -195,7 +198,7 @@ Agora você está pronto para usar o serviço de Linguagem de IA do Azure para c
     - **C#**: Program.cs
     - **Python**: classify-text.py
 
-1. Localize o comentário **Importar namespaces**. Em seguida, neste comentário, adicione o seguinte código específico de linguagem para importar os namespaces necessários para usar o SDK da Análise de Texo:
+1. Localize o comentário **Importar namespaces**. Neste comentário, adicione o seguinte código específico da linguagem para importar os namespaces necessários para usar o SDK de Análise de Texto:
 
     **C#**: Programs.cs
 
@@ -299,12 +302,12 @@ Agora você está pronto para usar o serviço de Linguagem de IA do Azure para c
 
 Agora, seu aplicativo está pronto para teste.
 
-1. No terminal integrado para a pasta **classify-text** e digite o seguinte comando para executar o programa:
+1. No terminal integrado da pasta **classify-text**, digite o seguinte comando para executar o programa:
 
-    - **C#** : `dotnet run`
+    - **C#**: `dotnet run`
     - **Python**: `python classify-text.py`
 
-    > **Dica**: você pode usar o ícone **Maximizar o tamanho do painel** (**^**) na barra de ferramentas do terminal para ver mais do texto do console.
+    > **Dica**: você pode usar o ícone **Maximizar tamanho do painel** (**^**) na barra de ferramentas do terminal para ver mais do texto do console.
 
 1. Observe a saída. O aplicativo deve listar uma classificação e pontuação de confiança para cada arquivo de texto.
 
