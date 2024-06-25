@@ -119,7 +119,7 @@ Agora que você adicionou algumas intenções, vamos treinar o modelo de linguag
 
 1. Selecione a página **Desempenho do modelo** e, em seguida, selecione o modelo de **relógio**. Revise as métricas de avaliação global e por intenção (*precisão*, *recall* e *medida f1*) e a *matriz de confusão* geradas pela avaliação que foi realizada durante o treinamento (observe que, devido ao pequeno número de enunciados de amostra, nem todas as intenções podem ser incluídas nos resultados).
 
-    > **OBSERVAÇÃO** Para saber mais sobre as métricas de avaliação, consulte a [documentação](/azure/ai-services/language-service/conversational-language-understanding/concepts/evaluation-metrics)
+    > **OBSERVAÇÃO** Para saber mais sobre as métricas de avaliação, consulte a [documentação](https://learn.microsoft.com/azure/ai-services/language-service/conversational-language-understanding/concepts/evaluation-metrics)
 
 1. Vá para a página **Implantação de um modelo** e selecione **Adicionar implantação**.
 
