@@ -51,7 +51,7 @@ Agora que você criou um recurso de criação, pode usá-lo para criar um projet
 
     Se você <u>não</u> foi solicitado a escolher um recurso de linguagem, pode ser porque você tem vários recursos de linguagem em sua assinatura; nesse caso:
 
-    1. Na barra na parte superior da página, clique no botão **Configurações (&#9881;)**.
+    1. Na barra na parte superior da página, selecione o botão **Configurações(&#9881;)**.
     2. Na página **Configurações**, exiba a guia **Recursos**.
     3. Selecione o recurso de linguagem que você acabou de criar e clique em **Alternar recurso**.
     4. Na parte superior da página, clique em **Language Studio** para retornar à página incial do Language Studio
