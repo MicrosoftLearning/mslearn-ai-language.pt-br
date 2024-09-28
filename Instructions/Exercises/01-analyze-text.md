@@ -15,7 +15,8 @@ Por exemplo, suponha que uma agência de viagens queira processar avaliações d
 Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço de Linguagem de IA do Azure** na sua assinatura do Azure.
 
 1. Abra o portal do Azure em `https://portal.azure.com` e entre usando a conta Microsoft associada à sua assinatura do Azure.
-1. Usando o campo de pesquisa na parte superior, pesquise **serviços de IA do Azure**. Nos resultados, selecione **Criar** em **Serviço de Linguagem**.
+1. Selecione **Criar um recurso**.
+1. No campo de pesquisa, pesquise **Serviço de linguagem**. Nos resultados, selecione **Criar** em **Serviço de Linguagem**.
 1. Selecione **Continuar para criar o recurso**.
 1. Provisione o recurso usando as seguintes configurações:
     - **Assinatura**: *sua assinatura do Azure*.
@@ -26,7 +27,7 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço 
     - **Aviso de IA responsável**: concordar
 1. Selecione **Revisar + criar** e, em seguida, selecione **Criar** para provisionar o recurso.
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
-1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações desta página mais adiante no exercício.
+1. Veja a página **Chaves e Ponto de extremidade** na seção **Gerenciamento de Recursos**. Você precisará das informações desta página mais adiante no exercício.
 
 ## Preparar-se para desenvolver um aplicativo no Visual Studio Code
 

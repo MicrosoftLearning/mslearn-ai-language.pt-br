@@ -15,9 +15,9 @@ A **Linguagem de IA do Azure** inclui uma capacidade de *respostas às perguntas
 Caso ainda não tenha um na sua assinatura, provisione um recurso de **serviço de Linguagem de IA do Azure**. Além disso, para criar e hospedar uma base de dados de conhecimento para respostas às perguntas, você precisa habilitar o recurso **Respostas às perguntas**.
 
 1. Abra o portal do Azure em `https://portal.azure.com` e entre usando a conta Microsoft associada à sua assinatura do Azure.
-1. No campo de pesquisa na parte superior, insira **Serviços de IA do Azure** e pressione **Inserir**.
-1. Selecione **Criar** no recurso **Serviço de linguagem**, nos resultados.
-1. **Selecione** o bloco **Respostas às perguntas personalizadas**. Em seguida, selecione **Continuar para criar o recurso**. Você precisará inserir as seguintes configurações:
+1. Selecione **Criar um recurso**.
+1. No campo de pesquisa, pesquise **Serviço de linguagem**. Nos resultados, selecione **Criar** em **Serviço de Linguagem**.
+1. Clique no bloco **Respostas às perguntas personalizadas**. Em seguida, selecione **Continuar para criar o recurso**. Você precisará inserir as seguintes configurações:
 
     - **Assinatura**: *sua assinatura do Azure*
     - **Grupo de recursos**: *escolha ou crie um grupo de recursos*.
@@ -54,7 +54,7 @@ Para criar uma base de dados de conhecimento para as respostas às perguntas em 
     4. Na parte superior da página, clique em **Language Studio** para retornar à home page do Language Studio.
 
 1. Na parte superior do portal, no menu **Criar novo**, selecione **Respostas às perguntas personalizadas**.
-1. No assistente ***Criar um projeto**, na página **Escolher configuração de linguagem**, selecione a opção **Definir a linguagem para todos os projetos neste recurso** e selecione **Inglês** como linguagem. Em seguida, selecione **Avançar**.
+1. No assistente ***Criar um projeto**, na página **Escolher configuração de linguagem**, selecione a opção **Escolher a linguagem para todos os projetos** e selecione **Inglês** como idioma. Em seguida, selecione **Avançar**.
 1. Na página **Inserir informações básicas**, insira os seguintes detalhes:
     - **Nome**`LearnFAQ`
     - **Descrição**: `FAQ for Microsoft Learn`
@@ -64,7 +64,7 @@ Para criar uma base de dados de conhecimento para as respostas às perguntas em 
 
 ## Adicionar fontes à base de dados de conhecimento
 
-Você pode criar uma base de dados de conhecimento do zero, mas é comum começar importando perguntas e respostas de uma página ou documento de perguntas frequentes existente. Nesse caso, você importará dados de uma página da Web de perguntas frequentes existente para o Microsoft Learn e também importará algumas perguntas e respostas predefinidas de "bate-papo" para dar suporte a trocas conversacionais comuns.
+Você pode criar uma base de dados de conhecimento do zero, mas é comum começar importando perguntas e respostas de uma página ou documento de perguntas frequentes existente. Nesse caso, você importará dados de uma página da Web de perguntas frequentes para o Microsoft Learn e também importará algumas perguntas e respostas predefinidas de "bate-papo" para dar suporte a trocas conversacionais comuns.
 
 1. Na página **Gerenciar fontes** para seu projeto de respostas às perguntas, na lista **&#9547; Adicionar fonte**, selecione **URLs**. Em seguida, na caixa de diálogo **Adicionar URLs**, selecione **&#9547; Adicionar URL** e defina o seguinte nome e URL antes de selecionar **Adicionar tudo** para adicioná-la à base de dados de conhecimento:
     - **Nome**: `Learn FAQ Page`
@@ -108,7 +108,7 @@ Agora que você tem uma base de dados de conhecimento, pode testá-la no Languag
 
 A base de dados de conhecimento fornece um serviço de back-end que os aplicativos cliente podem usar para responder a perguntas. Agora você está pronto para publicar sua base de dados de conhecimento e acessar sua interface REST a partir de um cliente.
 
-1. No projeto **LearnFAQ** no Language Studio, selecione a página **Implantar base de dados de conhecimento**.
+1. No projeto **LearnFAQ** no Language Studio, selecione a página **Implantar base de dados de conhecimento** no menu de navegação à esquerda.
 1. Na parte superior da página, selecione **Implantar**. Em seguida, selecione **Implantar** para confirmar que deseja implantar a base de dados de conhecimento.
 1. Quando a implantação estiver concluída, selecione **Obter URL de previsão** para exibir o ponto de extremidade REST da sua base de dados de conhecimento e observe que a solicitação de amostra inclui parâmetros para:
     - **projectName**: o nome do seu projeto (que deve ser *LearnFAQ*)
