@@ -82,6 +82,8 @@ Após a configuração ser concluída, crie um projeto de classificação de tex
 1. Selecione a opção **Não, eu preciso rotular meus arquivos como parte deste projeto**. Em seguida, selecione **Avançar**.
 1. Selecione **Criar projeto**.
 
+> **Dica**: se você receber um erro sobre não ter autorização para executar essa operação, será necessário adicionar uma atribuição de função. Para corrigir isso, adicionamos a função "Colaborador de Dados de Blob de Armazenamento" na conta de armazenamento do usuário que está executando o laboratório. Você encontra mais detalhes na [página da documentação](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource).
+
 ## Rotular seus dados.
 
 Agora que o projeto foi criado, você precisa rotular ou marcar seus dados para treinar o modelo na classificação de textos.

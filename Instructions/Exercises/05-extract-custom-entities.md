@@ -80,6 +80,8 @@ Agora você está pronto para criar um projeto personalizado de reconhecimento d
         - **Contêiner de armazenamento de blobs**: classificados
         - **Seus arquivos são rotulados com classes?**: não, preciso rotular meus arquivos como parte deste projeto
 
+> **Dica**: se você receber um erro sobre não ter autorização para executar essa operação, será necessário adicionar uma atribuição de função. Para corrigir isso, adicionamos a função "Colaborador de Dados de Blob de Armazenamento" na conta de armazenamento do usuário que está executando o laboratório. Você encontra mais detalhes na [página da documentação](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource).
+
 ## Rotular seus dados.
 
 Agora que seu projeto foi criado, você precisa rotular os dados a fim de treinar o modelo para identificar entidades.

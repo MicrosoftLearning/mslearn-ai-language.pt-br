@@ -91,6 +91,8 @@ Para ajudar o modelo a prever qual intenção um usuário está solicitando, voc
     - `what time is it?`
     - `tell me the time`
 
+    > **OBSERVAÇÃO** Para adicionar um novo enunciado, escreva o enunciado na caixa de texto ao lado da intenção e pressione ENTER. 
+
 1. Selecione a intenção **GetDay** e adicione as seguintes declarações como entrada de exemplo para essa intenção:
     - `what day is it?`
     - `what's the day?`
@@ -193,6 +195,8 @@ Em alguns casos, os valores válidos para uma entidade podem ser restritos a uma
     | Listar chave | sinônimos|
     |-------------------|---------|
     | `Sunday` | `Sun` |
+
+    > **OBSERVAÇÃO** Para inserir os campos da nova lista, insira o valor `Sunday` no campo de texto e clique no campo onde "Digite o valor e pressione enter..." é exibido, digite os sinônimos e pressione ENTER.
 
 1. Repita a etapa anterior para adicionar a seguinte lista de componentes:
 
