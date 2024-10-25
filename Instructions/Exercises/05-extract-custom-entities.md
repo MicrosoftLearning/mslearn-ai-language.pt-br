@@ -96,7 +96,7 @@ Agora que seu projeto foi criado, você precisa rotular os dados a fim de treina
     1. Realce o cabo da face do texto *face cord of firewood* e selecione a entidade **ItemForSale**.
     1. Realce o texto *Denver, CO* e selecione a entidade **Location**.
     1. Realce o texto *$90* e selecione a entidade **Price**.
-1.No painel **Atividade**, observe que este documento será adicionado ao conjunto de dados para treinar o modelo.
+1. No painel **Atividade**, observe que este documento será adicionado ao conjunto de dados para treinar o modelo.
 1. Use o botão **Próximo documento** para acessar o documento seguinte e continue atribuindo texto às entidades apropriadas em todo o conjunto de documentos, adicionando-os ao conjunto de dados de treinamento.
 1. Depois de rotular o último documento (*Ad 9.txt*), salve os rótulos.
 
