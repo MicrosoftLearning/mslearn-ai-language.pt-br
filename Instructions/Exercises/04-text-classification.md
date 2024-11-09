@@ -20,7 +20,18 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço 
 1. Crie um recurso com as seguintes configurações:
     - **Assinatura**: *sua assinatura do Azure*.
     - **Grupo de recursos**: *selecione ou crie um grupo de recursos*.
-    - **Região**: *escolha qualquer região disponível*:
+    - **Região**: *escolha uma das seguintes regiões*\*
+        - Leste da Austrália
+        - Índia Central
+        - Leste dos EUA
+        - Leste dos EUA 2
+        - Norte da Europa
+        - Centro-Sul dos Estados Unidos
+        - Norte da Suíça
+        - Sul do Reino Unido
+        - Europa Ocidental
+        - Oeste dos EUA 2
+        - Oeste dos EUA 3
     - **Nome**: *insira um nome exclusivo*.
     - **Tipo de preço**: selecione **F0** (*gratuito*), ou **S** (*Standard*) se F não estiver disponível.
     - **Conta de armazenamento**: nova conta de armazenamento
