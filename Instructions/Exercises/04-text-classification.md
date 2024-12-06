@@ -43,6 +43,16 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso do **serviço 
 1. Aguarde a conclusão da implantação e acesse o recurso implantado.
 1. Exiba a página **Chaves e Ponto de Extremidade**. Você precisará das informações nesta página mais adiante no exercício.
 
+## Funções para seu usuário
+> **OBSERVAÇÃO**: se você ignorar esta etapa, receberá um erro 403 ao tentar se conectar ao seu projeto personalizado. É importante que o usuário atual tenha essa função para acessar dados de blob da conta de armazenamento, mesmo que você seja o proprietário da conta de armazenamento.**
+
+1. Acesse a página da conta de armazenamento no portal do Azure.
+2. Selecione **Controle de acesso (IAM)** no menu de navegação à esquerda.
+3. Clique em **Adicionar** para Adicionar Atribuições de Função e escolha a função **Colaborador de dados do blob armazenamento** na conta de armazenamento.
+4. Em **Atribuir acesso a**, selecione **Usuário, grupo ou entidade de serviço**.
+5. Selecione **Selecionar membros**.
+6. Selecione seu Usuário. É possível pesquisar nomes de usuário no campo **Selecionar**.
+
 ## Carregar artigos de exemplo
 
 Após criar o serviço de Linguagem de IA do Azure e a conta de armazenamento, você precisará carregar artigos de exemplo para treinar o modelo mais tarde.
