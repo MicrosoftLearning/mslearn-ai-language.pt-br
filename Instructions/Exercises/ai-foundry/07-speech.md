@@ -4,6 +4,10 @@ lab:
   module: Module 4 - Create speech-enabled apps with Azure AI services
 ---
 
+<!--
+Possibly update to use standalone AI Service instead of Foundry?
+-->
+
 # Reconhecer e sintetizar fala
 
 A **Fala de IA do Azure** é um serviço que fornece funcionalidade relacionada à fala, incluindo:
