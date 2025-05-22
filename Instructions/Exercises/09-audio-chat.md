@@ -6,7 +6,7 @@ lab:
 
 # Desenvolver um aplicativo de chat habilitado para áudio
 
-Neste exercício, você usará o modelo de IA generativa *Phi-4-multimodal-instruct* para gerar respostas para prompts que incluem arquivos de áudio. Você desenvolverá um aplicativo que fornece assistência de IA com produtos frescos em uma mercearia usando a Fábrica de IA do Azure e o serviço de inferência de modelo da IA do Azure.
+Neste exercício, você usará o modelo de IA generativa *Phi-4-multimodal-instruct* para gerar respostas para prompts que incluem arquivos de áudio. Você desenvolverá um aplicativo que fornece assistência de IA para uma empresa fornecedora de produtos usando a Fábrica de IA do Azure e o serviço de Inferência de modelo da IA do Azure para resumir as mensagens de voz deixadas pelos clientes.
 
 Este exercício levará aproximadamente **30** minutos.
 
@@ -95,13 +95,13 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
     **Python**
 
     ```
-    cd mslearn-ai-audio/Labfiles/09-audio-chat/python
+    cd mslearn-ai-audio/Labfiles/09-audio-chat/Python
     ```
 
     **C#**
 
     ```
-    cd mslearn-ai-audio/Labfiles/09-audio-chat/c-sharp
+    cd mslearn-ai-audio/Labfiles/09-audio-chat/C-sharp
     ```
 
 1. No painel de linha de comando do Cloud Shell, digite o seguinte comando para instalar as bibliotecas que você usará:
@@ -111,7 +111,7 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
     ```
     python -m venv labenv
     ./labenv/bin/Activate.ps1
-    pip install python-dotenv azure-identity azure-ai-projects azure-ai-inference
+    pip install -r requirements.txt azure-identity azure-ai-projects azure-ai-inference
     ```
 
     **C#**
@@ -173,9 +173,6 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
         SystemMessage,
         UserMessage,
         TextContentItem,
-        AudioContentItem,
-        InputAudio,
-        AudioContentFormat,
     )
     ```
 
@@ -230,13 +227,13 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
 
 1. No editor de código do arquivo **audio-chat.py**, na seção de loop, no comentário **Get a response to audio input**, adicione o seguinte código para enviar um prompt que inclua o seguinte áudio:
 
-    <video controls src="../media/manzanas.mp4" title="Um pedido de maçãs" width="150"></video>
+    <video controls src="../media/avocados.mp4" title="Um pedido de abacates" width="150"></video>
 
     **Python**
 
     ```python
     # Get a response to audio input
-    file_path = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/manzanas.mp3"
+    file_path = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/avocados.mp3"
     response = chat_client.complete(
         messages=[
             SystemMessage(system_message),
@@ -258,7 +255,7 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
 
     ```csharp
     // Get a response to audio input
-    string audioUrl = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/manzanas.mp3";
+    string audioUrl = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/avocados.mp3";
     var requestOptions = new ChatCompletionsOptions()
     {
         Messages =
@@ -290,21 +287,25 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
     dotnet run
     ```
 
-1. Quando solicitado, insira o prompt `What is this customer saying in English?`
+1. Quando solicitado, insira o prompt  
+
+    ```
+    Can you summarize this customer's voice message?
+    ```
 
 1. Revise a resposta.
 
-### Usar um prompt diferente
+### Use um arquivo de áudio diferente
 
 1. No editor de código do código do aplicativo, localize o código adicionado anteriormente no comentário **Get a response to audio input**. Em seguida, modifique o código da seguinte maneira para selecionar um arquivo de áudio diferente:
 
-    <video controls src="../media/caomei.mp4" title="Um pedido de morangos" width="150"></video>
+    <video controls src="../media/fresas.mp4" title="Um pedido de morangos" width="150"></video>
 
     **Python**
 
     ```python
     # Get a response to audio input
-    file_path = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/caomei.mp3"
+    file_path = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/fresas.mp3"
     response = chat_client.complete(
         messages=[
             SystemMessage(system_message),
@@ -326,7 +327,7 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
 
     ```csharp
     // Get a response to audio input
-    string audioUrl = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/caomei.mp3";
+    string audioUrl = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/fresas.mp3";
     var requestOptions = new ChatCompletionsOptions()
     {
         Messages =
@@ -358,10 +359,10 @@ Agora que você implantou o modelo, pode usar a implantação em um aplicativo c
     dotnet run
     ```
 
-1. Quando solicitado, insira o seguinte prompt:
-
+1. Quando solicitado, insira o seguinte prompt: 
+    
     ```
-    A customer left this voice message, can you summarize it?
+    Can you summarize this customer's voice message? Is it time-sensitive?
     ```
 
 1. Revise a resposta. Em seguida, insira `quit` para sair do programa.
