@@ -227,7 +227,7 @@ Se você terminou de explorar o serviço de Fala de IA do Azure, pode excluir os
 
 ## E se você tiver um microfone e um alto-falante?
 
-Neste exercício, você usará arquivos de áudio para a entrada e saída de fala. Vamos ver como o código pode ser modificado para usar hardware de áudio.
+Neste exercício, o ambiente do Azure Cloud Shell que usamos não oferece suporte a hardware de áudio, portanto, você usou arquivos de áudio para a entrada e a saída de fala. Vamos ver como o código pode ser modificado para usar o hardware de áudio, caso ele esteja disponível.
 
 ### Usar a tradução de fala com um microfone
 
@@ -258,7 +258,7 @@ Neste exercício, você usará arquivos de áudio para a entrada e saída de fal
             "hi": "hi-IN-MadhurNeural"
    }
    speech_config.speech_synthesis_voice_name = voices.get(targetLanguage)
-   audio_config_out = speech_sdk.audio.AudioConfig(use_default_speaker=True)
+   audio_config_out = speech_sdk.audio.AudioOutputConfig(use_default_speaker=True)
    speech_synthesizer = speech_sdk.SpeechSynthesizer(speech_config, audio_config_out)
    speak = speech_synthesizer.speak_text_async(translation).get()
    if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:

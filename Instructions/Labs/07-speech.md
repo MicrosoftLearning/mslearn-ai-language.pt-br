@@ -243,9 +243,17 @@ O SSML (Linguagem de Marcação de Sintetização de Fala) permite personalizar 
     
     <video controls src="https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Instructions/media/Output2.mp4" title="O tempo é 5:30. Hora de finalizar este laboratório." width="150"></video>
 
-## (OPCIONAL) E se você tiver um microfone e um alto-falante?
+## Limpar
 
-Neste exercício, você usará arquivos de áudio para a entrada e saída de fala. Vamos ver como o código pode ser modificado para usar hardware de áudio.
+Se tiver terminado de explorar a Fala de IA do Azure, deverá excluir os recursos que criou neste exercício para evitar incorrer em custos desnecessários do Azure.
+
+1. Feche o painel do Azure Cloud Shell
+1. No portal do Azure, navegue até o recurso de Fala de IA do Azure criado neste laboratório.
+1. Na página de recursos, selecione **Excluir** e siga as instruções para excluir o recurso.
+
+## E se você tiver um microfone e um alto-falante?
+
+Neste exercício, o ambiente do Azure Cloud Shell que usamos não oferece suporte a hardware de áudio, portanto, você usou arquivos de áudio para a entrada e a saída de fala. Vamos ver como o código pode ser modificado para usar o hardware de áudio, caso ele esteja disponível.
 
 ### Uso do Reconhecimento de fala com um microfone
 
@@ -292,14 +300,6 @@ if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:
 ```
 
 > **Observação**: o alto-falante padrão do sistema é a saída de áudio padrão, então você também pode simplesmente omitir o AudioConfig completamente!
-
-## Limpar
-
-Se tiver terminado de explorar a Fala de IA do Azure, deverá excluir os recursos que criou neste exercício para evitar incorrer em custos desnecessários do Azure.
-
-1. Feche o painel do Azure Cloud Shell
-1. No portal do Azure, navegue até o recurso de Fala de IA do Azure criado neste laboratório.
-1. Na página de recursos, selecione **Excluir** e siga as instruções para excluir o recurso.
 
 ## Mais informações
 
