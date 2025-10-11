@@ -56,7 +56,7 @@ Você desenvolverá seu código usando o Cloud Shell no Portal do Azure. Os arqu
     git clone https://github.com/microsoftlearning/mslearn-ai-language
     ```
 
-    > **Dica**: Ao colar comandos no Cloud Shell, a saída poderá ocupar uma grande quantidade do buffer da tela. Você pode limpar a tela digitando o comando `cls` para facilitar o foco em cada tarefa.
+    > **Dica**: ao colar comandos no Cloud Shell, a saída poderá ocupar uma grande quantidade do buffer da tela. Você pode limpar a tela digitando o comando `cls` para facilitar o foco em cada tarefa.
 
 1. Após o repositório ser clonado, navegue até a pasta que contém os arquivos de código do aplicativo:  
 
