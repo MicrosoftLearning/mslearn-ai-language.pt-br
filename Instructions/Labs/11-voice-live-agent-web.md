@@ -248,7 +248,7 @@ Há apenas dois valores que você deve alterar na parte superior do script de im
 1. Execute os comandos a seguir no Cloud Shell para começar a editar o script de implantação.
 
     ```bash
-    cd ~/voice-live-web
+    cd ~/01-voice-live-web
     ```
     
     ```bash
