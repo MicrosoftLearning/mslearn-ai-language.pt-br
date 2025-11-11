@@ -44,7 +44,7 @@ Caso ainda não tenha um na sua assinatura, provisione um recurso de **serviço 
 
 ## Criar um projeto de respostas às perguntas
 
-Para criar uma base de dados de conhecimento para as respostas às perguntas em seu recurso de Linguagem de IA do Azure, você pode usar o portal do Language Studio para criar um projeto de respostas às perguntas. Nesse caso, você criará uma base de dados de conhecimento contendo perguntas e respostas sobre o [Microsoft Learn](https://docs.microsoft.com/learn).
+Para criar uma base de dados de conhecimento para as respostas às perguntas em seu recurso de Linguagem de IA do Azure, você pode usar o portal do Language Studio para criar um projeto de respostas às perguntas. Nesse caso, você criará uma base de dados de conhecimento contendo perguntas e respostas sobre o [Microsoft Learn](https://learn.microsoft.com/training/).
 
 1. Em uma nova guia do navegador, vá para o portal do Language Studio em [https://language.cognitive.azure.com/](https://language.cognitive.azure.com/) e entre usando a conta Microsoft associada à sua assinatura do Azure.
 1. Se você for solicitado a escolher um recurso de linguagem, selecione as seguintes configurações:
@@ -75,7 +75,7 @@ Você pode criar uma base de dados de conhecimento do zero, mas é comum começa
 
 1. Na página **Gerenciar fontes** para seu projeto de respostas às perguntas, na lista **&#9547; Adicionar fonte**, selecione **URLs**. Em seguida, na caixa de diálogo **Adicionar URLs**, selecione **&#9547; Adicionar URL** e defina o seguinte nome e URL antes de selecionar **Adicionar tudo** para adicioná-la à base de dados de conhecimento:
     - **Nome**: `Learn FAQ Page`
-    - **URL**: `https://docs.microsoft.com/en-us/learn/support/faq`
+    - **URL**: `https://learn.microsoft.com/en-us/training/support/faq?pivots=general`
 1. Na página **Gerenciar fontes** para seu projeto de respostas às perguntas, na lista **&#9547; Adicionar fonte**, selecione **Bate-papo**. Na caixa de diálogo **Adicionar bate-papo**, selecione **Amigável** e selecione **Adicionar bate-papo**.
 
 ## Editar a base de dados de conhecimento
@@ -84,18 +84,18 @@ Sua base de dados de conhecimento foi preenchida com pares de perguntas e respos
 
 1. Em seu projeto **LearnFAQ** no Language Studio, selecione a página **Editar base de dados de conhecimento** para ver os pares de perguntas e respostas existentes (se algumas dicas forem exibidas, leia-as e escolha **Entendi** para ignorá-las ou selecione **Pular todas**)
 1. Na base de dados de conhecimento, na guia **Pares de perguntas e respostas**, selecione **&#65291;** e crie um novo par de perguntas e respostas com as seguintes configurações:
-    - **Origem**:  `https://docs.microsoft.com/en-us/learn/support/faq`
-    - **Pergunta**: `What are Microsoft credentials?`
-    - **Resposta**: `Microsoft credentials enable you to validate and prove your skills with Microsoft technologies.`
+    - **Origem**:  `https://learn.microsoft.com/en-us/training/support/faq?pivots=general`
+    - **Pergunta**: `What are the different types of modules on Microsoft Learn?`
+    - **Resposta**: `Microsoft Learn offers various types of training modules, including role-based learning paths, product-specific modules, and hands-on labs. Each module contains units with lessons and knowledge checks to help you learn at your own pace.`
 1. Selecione **Concluído**.
-1. Na página da pergunta **O que são credenciais da Microsoft?** que é criada, expanda as **Perguntas alternativas**. Em seguida, adicione a pergunta alternativa `How can I demonstrate my Microsoft technology skills?`.
+1. Na página criada para a pergunta **Quais são os diferentes tipos de módulos no Microsoft Learn?**, expanda **Perguntas alternativas**. Em seguida, adicione a pergunta alternativa `How are training modules organized?`.
 
     Em alguns casos, faz sentido permitir que o usuário acompanhe uma resposta criando uma conversa em *vários turnos* que permite ao usuário refinar iterativamente a pergunta para chegar à resposta de que precisa.
 
-1. Na resposta inserida para a pergunta de certificação, expanda **Prompts de acompanhamento** e adicione o seguinte prompt de acompanhamento:
-    - **SMS exibido no prompt para o usuário**: `Learn more about credentials`.
-    - Selecione a guia **Criar link para novo par** e insira este texto: `You can learn more about credentials on the [Microsoft credentials page](https://docs.microsoft.com/learn/credentials/).`
-    - Selecione **Mostrar apenas no fluxo contextual**. Essa opção garante que a resposta só seja retornada no contexto de uma pergunta de acompanhamento da pergunta de certificação original.
+1. Abaixo da resposta que você inseriu para a pergunta sobre os tipos de módulos, expanda os **Prompts de acompanhamento** e adicione o seguinte prompt de acompanhamento:
+    - **SMS exibido no prompt para o usuário**: `Learn more about training`.
+    - Selecione a guia **Criar link para novo par** e insira este texto: `You can explore modules and learning paths on the [Microsoft Learn training page](https://learn.microsoft.com/training/).`
+    - Selecione **Mostrar apenas no fluxo contextual**. Essa opção garante que a resposta só seja retornada no contexto de uma pergunta de acompanhamento da pergunta original sobre os tipos de módulos.
 1. Selecione **Adicionar prompt**.
 
 ## Treinar e testar a base de conhecimento
@@ -107,8 +107,8 @@ Agora que você tem uma base de dados de conhecimento, pode testá-la no Languag
 1. No painel de teste, na parte superior, anule a seleção **Incluir resposta curta** (se ainda não estiver desmarcada). Em seguida, na parte inferior, insira a mensagem `Hello`. Uma resposta adequada deve ser retornada.
 1. No painel de teste, na parte inferior, insira a mensagem `What is Microsoft Learn?`. Uma resposta apropriada das perguntas frequentes deve retornar.
 1. Insira a mensagem `Thanks!` Uma resposta de bate-papo apropriada deve ser retornada.
-1. Insira a mensagem `Tell me about Microsoft credentials`. A resposta que você criou deve ser retornada junto com um link de prompt de acompanhamento.
-1. Selecione o link de acompanhamento **Saiba mais sobre credenciais**. A resposta de acompanhamento com um link para a página de certificação deve ser retornada.
+1. Insira a mensagem `What are the different types of modules on Microsoft Learn?`. A resposta que você criou deve ser retornada junto com um link de prompt de acompanhamento.
+1. Selecione o link de acompanhamento **Saiba mais sobre o treinamento**. A resposta de acompanhamento com um link para a página de treinamento deve ser exibida.
 1. Quando terminar de testar a base de dados de conhecimento, feche o painel de teste.
 
 ## Implantar a base de dados de conhecimento
